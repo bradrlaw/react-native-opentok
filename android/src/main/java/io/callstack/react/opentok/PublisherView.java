@@ -9,6 +9,7 @@ import com.opentok.android.Publisher;
 import com.opentok.android.PublisherKit;
 import com.opentok.android.Session;
 import com.opentok.android.Stream;
+import android.util.Log;
 
 /**
  * PublisherView
@@ -22,9 +23,11 @@ public class PublisherView extends SessionView implements PublisherKit.Publisher
 
     public PublisherView(ThemedReactContext reactContext) {
         super(reactContext);
+        Log.e("BRAD", "********* createViewInstance()");
     }
 
     private void startPublishing() {
+        Log.d("BRAD", "********** startPublishing");
         mPublisher = new Publisher(getContext());
         mPublisher.setPublisherListener(this);
 
@@ -34,10 +37,12 @@ public class PublisherView extends SessionView implements PublisherKit.Publisher
     }
 
     private void attachPublisherView() {
+        Log.d("BRAD", "********** attachPublisherView");
         addView(mPublisher.getView(), new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     }
 
     private void cleanUpPublisher() {
+        Log.d("BRAD", "********** attachPublisherView");
         removeView(mPublisher.getView());
         mPublisher = null;
     }

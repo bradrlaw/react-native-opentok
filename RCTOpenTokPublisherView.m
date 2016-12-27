@@ -112,11 +112,16 @@
 
   [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
   NSString *creationTimeString = [dateFormatter stringFromDate:connection.creationTime];
-    _onClientConnected(@{
+    /* _onClientConnected(@{
         @"connectionId": connection.connectionId,
         @"creationTime": creationTimeString,
         @"data": connection.data,
-    });
+    });*/
+    _onClientConnected(@{
+     @"connectionId": connection.connectionId,
+     @"creationTime": creationTimeString,
+     @"data": @"test",
+     });
 }
 
 /**

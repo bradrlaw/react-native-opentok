@@ -44,6 +44,28 @@ class Basic extends Component {
     return (
       <View style={styles.container}>
         <Text onPress={() => { Session.sendMessage('test'); }}>
+          {'Publisher'}
+        </Text>
+        <PublisherView
+              apiKey={OPENTOK_API_KEY}
+              sessionId={SESSION_ID}
+              token={PUBLISHER_TOKEN}
+              style={{ width: 300, height: 200 }}
+            />
+        
+         <Text>
+          {'Subscriber'}
+        </Text>
+        <SubscriberView
+              apiKey={OPENTOK_API_KEY}
+              sessionId={SESSION_ID}
+              token={SUBSCRIBER_TOKEN}
+              style={{ width: 300, height: 200 }}
+            />        
+      </View>
+      /*
+      <View style={styles.container}>
+        <Text onPress={() => { Session.sendMessage('test'); }}>
           {isPublisher ? 'Publisher' : 'Subscriber'}
         </Text>
         {
@@ -71,7 +93,7 @@ class Basic extends Component {
           />
         </Text>
 
-      </View>
+      </View>*/
     );
   }
 }
